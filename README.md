@@ -7,8 +7,9 @@
 .
 └── can_format_26a/
     ├── pcb_daimiya/
-    │   ├── battery_pcb.yaml
-    │   └── 4mni_bldc_driver.yaml
+    │   ├── power_board.yaml
+    │   ├── common.yaml
+    │   └── 4omni_bldc_driver.yaml
     └── README.md
 </pre>
 
@@ -20,9 +21,8 @@
 
 IDは
 - [Priority level](#priority-level)
-- [Data type](#data-type)
 - [Board ID](#board-id)
-- [Register ID](#register-id)
+- [Command](#command)
 
 の4つの情報を組み合わせで表現される。
 
@@ -127,4 +127,4 @@ RESET_EMERGENCY_STOPでモード設定などは復活するが、電源が落ち
 - `pcb_daimiya/battery_pcb.json` — 安全管理基板のCANフォーマット定義
 - `pcb_daimiya/4mni_bldc_driver.yaml` — 4mni BLDCドライバ用のCANフォーマット定義
 
-https://tree.nathanfriend.com/?s=(%27options!(%27fancy-~fullPath!false~trailingSlash-~rootDot-)~0(%270%27can_format_26a*pcb_daimiya5battery_pcb.json54mni_bldc_driver.yaml3%E3%80%80README.md%27)~version!%271%27)*3%20-!true0source!3%5Cn5*%20%01530-*
+[ディレクトリツリー](https://tree.nathanfriend.com/?s=(%27options!(%27fancy-~fullPath!false~trailingSlash-~rootDot-)~0(%270%27can_format_26a*pcb_daimiya5battery_pcb.json54mni_bldc_driver.yaml3%E3%80%80README.md%27)~version!%271%27)*3%20-!true0source!3%5Cn5*%20%01530-*)
