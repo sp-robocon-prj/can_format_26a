@@ -1,0 +1,75 @@
+protocol:
+  name: "26a_can_fd"
+  version: "1.0"
+  frame_type: "CAN_FD"
+  id_format: "hexadecimal"
+  id_type: "STANDARD"
+  arbitration_bitrate: 1000000
+  data_bitrate: 2000000
+  brs: true
+  author: "https://github.com/earth-tk"
+
+messages:
+  - name: "Heartbeat"
+    id: "0x0"
+    dlc: 0
+    fields:
+      - name: "status"
+        byte: 0
+        type: "uint8"
+        description: "0 = OK, 1 = Warning, 2 = Error"
+
+  - name: "BatteryOn"
+    id: "0010"
+    dlc: 1
+    fields:
+      - name: "command"
+        byte: 0
+        type: "uint8"
+        description: "1 = Enable"
+
+  - name: "BatteryOff"
+    id: "0011"
+    dlc: 1
+    fields:
+      - name: "command"
+        byte: 0
+        type: "uint8"
+        description: "0 = Disable"
+
+  - name: "BatteryStatus"
+    id: "0012"
+    dlc: 1
+    fields:
+      - name: "command"
+        byte: 0
+        type: "uint8"
+        description: "0 = Disable"
+
+  - name: "MotorDriver_1"
+    id: "0100"
+    dlc: 16
+    fields:
+      - name: "position"
+        byte: 0
+        length: 8
+        type: "float32"
+        unit: "rad"
+      - name: "torque"
+        byte: 8
+        length: 8
+        type: "float32"
+        unit: "N·m"
+
+  - name: "MotorDriverError"
+    id: "0101"
+    dlc: 4
+    fields:
+      - name: "command_id"
+        byte: 0
+        length: 2
+        type: "uint16"
+      - name: "error_code"
+        byte: 2
+        length: 2
+        type: "uint16"
