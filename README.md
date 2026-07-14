@@ -70,7 +70,7 @@ IDは
 
 命令。5bit(0~31)
 
-共通セット 0x00~0x07
+共通セット(common.yaml) 0x00~0x07
 | command | name | board_id | r/w? | 概要 |
 |:--:|:--:|:--:|:--:|:--:|
 | 0x00 | - | 共通 | - | 予約 |
@@ -125,6 +125,7 @@ RESET_EMERGENCY_STOPでモード設定などは復活するが、電源が落ち
 データはすべてリトルエディアン。  
 
 - `pcb_daimiya/battery_pcb.json` — 安全管理基板のCANフォーマット定義
-- `pcb_daimiya/4mni_bldc_driver.yaml` — 4mni BLDCドライバ用のCANフォーマット定義
+- `pcb_daimiya/4omni_bldc_driver.yaml` — 4OMNI BLDCドライバ用のCANフォーマット定義
+- `pcb_daimiya/common.yaml` — 共通のCANフォーマット定義
 
-[ディレクトリツリー](https://tree.nathanfriend.com/?s=(%27options!(%27fancy-~fullPath!false~trailingSlash-~rootDot-)~0(%270%27can_format_26a*pcb_daimiya5battery_pcb.json54mni_bldc_driver.yaml3%E3%80%80README.md%27)~version!%271%27)*3%20-!true0source!3%5Cn5*%20%01530-*)
+[ディレクトリツリー](https://tree.nathanfriend.com/?s=(%27options!(%27fancy-~fullPath!false~trailingSlash-~rootDot-)~5(%275%27can_format_26a*pcb_daimiya3power_board03common034omni_bldc_driver07%E3%80%80README.md%27)~version!%271%27)*7%20-!true0.yaml3*%205source!7%5Cn%017530-*)
