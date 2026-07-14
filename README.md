@@ -51,20 +51,20 @@ IDは
 |:--:|:--:|:--:|
 | 0x00 | - | 予約 |
 | 0x01 | [電源管理基板](./pcb_daimiya/power_board.yaml) | 電源管理 |
-| 0x02 | [4OMNI_BLDC_DRIVER](./pcb_daimiya/4mni_bldc_driver.yaml) | 4輪オムニ |
-| 0x03 | [汎用GPIO基板](./pcb_daimiya/generic_gpio_board.yaml) | 汎用GPIO |
-| 0x04 | - | - |
-| 0x05 | - | - |
-| 0x06 | - | - |
-| 0x07 | - | - |
-| 0x08 | - | - |
-| 0x09 | - | - |
-| 0x0A | - | - |
-| 0x0B | - | - |
-| 0x0C | - | - |
-| 0x0D | - | - |
-| 0x0E | - | - |
-| 0x0F | - | - |
+| 0x02 | [4OMNI_BLDC_DRIVER](./pcb_daimiya/4omni_bldc_driver.yaml) | 4輪オムニ |
+| 0x03 | - | 予約 |
+| 0x04 | - | 予約 |
+| 0x05 | - | 予約 |
+| 0x06 | - | 予約 |
+| 0x07 | - | 予約 |
+| 0x08 | - | 予約 |
+| 0x09 | - | 予約 |
+| 0x0A | - | 予約 |
+| 0x0B | - | 予約 |
+| 0x0C | - | 予約 |
+| 0x0D | - | 予約 |
+| 0x0E | - | 予約 |
+| 0x0F | - | 予約 |
 
 ### Command
 
