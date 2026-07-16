@@ -10,3 +10,7 @@ protocol:
   author: "https://github.com/earth-tk"
 
 messages:
+  - name: "NOP"
+    data_id: "0x08"
+    dlc: 0
+    fields:

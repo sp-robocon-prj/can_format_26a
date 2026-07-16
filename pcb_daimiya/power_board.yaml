@@ -43,6 +43,21 @@ messages:
         type: float
         unit: V
         description: 電源基板の電圧[V]
+  - name: PBB_VOLTAGE #Power Board Battery Voltage
+    data_id: "0x0B"
+    dlc: 4
+    rw: "r"
+    fields:
+      - name: PBB_VOLTAGE_1
+        byte: 0
+        type: float
+        unit: V
+        description: 電源基板の(1)バッテリー電圧[V]
+      - name: PBB_VOLTAGE_2
+        byte: 0
+        type: float
+        unit: V
+        description: 電源基板の(2)バッテリー電圧[V]
   - name: PB_VOLTAGE_PERIOD
     data_id: "0x0C"
     dlc: 4
@@ -53,6 +68,11 @@ messages:
         type: uint16
         unit: ms
         description: 電源基板の電圧の周期 [ms]
+      - name: PBB_VOLTAGE_PERIOD
+        byte: 2
+        type: float
+        unit: V
+        description: 電源基板の各バッテリー電圧の周期[V]
   - name: OUT_I
     data_id: "0x0D"
     dlc: 4

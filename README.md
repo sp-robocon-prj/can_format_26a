@@ -1,4 +1,5 @@
-# 26a機体の CAN フォーマット  [fork:Gakurobo2024_protocol](https://github.com/NITTC-GakuRobo/Gakurobo2024_protocol)
+# 26a機体の CAN フォーマット
+[参考:Gakurobo2024_protocol](https://github.com/NITTC-GakuRobo/Gakurobo2024_protocol)
 
 パースしやすいようにyamlで書いてる。   
 
@@ -20,32 +21,28 @@
 - id_typeはSTANDARD(11bit)
 
 IDは
-- [Priority level](#priority-level)
+- [Data Type](#data-type)
 - [Board ID](#board-id)
-- [Command](#command)
+- [Register ID](#register-id)
 
 の3つの情報を組み合わせで表現される。
 
 | name | bit | 個数 |
 |:--:|:--:|:--:|
-| Priority_level | 2 | 4 |
-| board_id | 4 | 16 |
-| command | 5 | 32 |
+| Data_type | 3 | 8 |
+| board_id | 3 | 8 |
+| Register ID | 5 | 32 |
 
-### Priority level
+優先度はcanの仕様に準じる。
+また、Register IDで決まる。
 
-優先度。2bit(0~4) 
+### Data Type
 
-| name | 優先度 | 役割 |
-|:--:|:--:|:--:|
-| 最優先 | 0 | Emergency |
-| 高 | 1 | Control |
-| 中 | 2 | Service |
-| 低 | 3 | Background |
+
 
 ### Board ID
 
-基板固有の値。4bit(0~15)
+基板固有の値。3bit(0~7)
 
 | Board ID | name | 役割 |
 |:--:|:--:|:--:|
@@ -57,27 +54,19 @@ IDは
 | 0x05 | - | 予約 |
 | 0x06 | - | 予約 |
 | 0x07 | - | 予約 |
-| 0x08 | - | 予約 |
-| 0x09 | - | 予約 |
-| 0x0A | - | 予約 |
-| 0x0B | - | 予約 |
-| 0x0C | - | 予約 |
-| 0x0D | - | 予約 |
-| 0x0E | - | 予約 |
-| 0x0F | - | 予約 |
 
-### Command
+### Register ID
 
 命令。5bit(0~31)
 
 共通セット(common.yaml) 0x00~0x07
-| command | name | board_id | r/w? | 概要 |
+| Register ID | name | board_id | r/w? | 概要 |
 |:--:|:--:|:--:|:--:|:--:|
 | 0x00 | - | 共通 | - | 予約 |
 | 0x01 | EMS | 共通 | - | 非常停止 |
 | 0x02 | RESET_EMS | 共通 | - | 非常停止解除 |
 | 0x03 | ID_RQ | 共通 | - | これを受信したデバイスは自身のIDを返せ |
-| 0x04 | - | 共通 | - |  |
+| 0x04 | - | 共通 | - | 予約 |
 | 0x05 | - | 共通 | - | 予約 |
 | 0x06 | - | 共通 | - | 予約 |
 | 0x07 | - | 共通 | - | 予約 |
@@ -85,11 +74,11 @@ IDは
 #### ID_RQ
 
 リモートフレームでID_RQを送信することでバス上のデバイスを調べることができる。  
-リクエストを受け取ったデバイスは、Board IDに自身のID（ロータリーDIPの値）、data[0]に基板の形式を入れてData type 0x0で返す。  
+リクエストを受け取ったノードは、Board IDに自身のIDを入れて返す。  
 
-#### PCU_STATE  
+#### PB_STATE  
 
-**PCU_STATE!=0ならなんかヤバいことが起きてるので非常停止シーケンス起動しろ**  
+**PB_STATE!=0ならなんかヤバいことが起きてるので非常停止シーケンス起動しろ**  
 
 |bit|名称|概要|
 |:--:|:--:|:--:|
@@ -112,7 +101,7 @@ PCU_STATEは変化があった場合即座に発報される。
 ### raspiとの通信接続
 
 [mainboard pro max](https://github.com/midarubiccube/raspberrypi-io-board)にstm32 h723が乗っていて、基板内udpでつながっている。  
-なのでmainboardから出ているcan端子(4pin ポケットコネクタ)に接続することで、raspiから直でCAN通信ができる.
+なのでmainboardから出ているcan端子(4pin ポケットコネクタ)に接続することで、raspiから直でCAN通信ができる。
 
 #### 非常停止
 
