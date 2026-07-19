@@ -8,16 +8,15 @@
 <!-- TREE START -->
 .
 ├── README.md
-├── pcb_midarubiccube
-│   ├── 4250_bldc_driver.yaml
-│   ├── common.yaml
-│   ├── esp32_c5.yaml
-│   ├── lpb.yaml
-│   ├── mainboard_pro_max.yaml
-│   └── power_board.yaml
-└── tree.txt
+└── pcb_midarubiccube
+    ├── 4250_bldc_driver.yaml
+    ├── common.yaml
+    ├── esp32_c5.yaml
+    ├── lpb.yaml
+    ├── mainboard_pro_max.yaml
+    └── power_board.yaml
 
-2 directories, 8 files
+2 directories, 7 files
 <!-- TREE END -->
 </pre>
 
