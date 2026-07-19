@@ -1,0 +1,43 @@
+name: Update README Tree
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+    types:
+      - opened
+      - synchronize
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリをチェックアウト (PR ブランチを checkout)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: treeコマンドでディレクトリ構造を取得
+        run: |
+          echo '```' > tree.txt
+          tree -a -I ".git|node_modules" >> tree.txt
+          echo '```' >> tree.txt
+          cat tree.txt
+
+      - name: README.mdを更新
+        run: |
+          sed -i '/<!-- TREE START -->/,/<!-- TREE END -->/{/<!-- TREE START -->/!{/<!-- TREE END -->/!d}}' README.md
+          sed -i '/<!-- TREE START -->/r tree.txt' README.md  # 新しい tree を挿入
+
+      - name: 変更をコミット & プッシュ
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet || (git commit -m "Update README tree" && git push)
