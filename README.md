@@ -6,11 +6,7 @@
 ## ディレクトリツリー
 <pre>
 <!-- TREE START -->
-```
 .
-├── .github
-│   └── workflows
-│       └── update-readme-tree.yml
 ├── README.md
 ├── pcb_midarubiccube
 │   ├── 4250_bldc_driver.yaml
@@ -21,8 +17,7 @@
 │   └── power_board.yaml
 └── tree.txt
 
-4 directories, 9 files
-```
+2 directories, 8 files
 <!-- TREE END -->
 </pre>
 
