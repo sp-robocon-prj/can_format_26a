@@ -5,14 +5,14 @@
 
 ## ディレクトリツリー
 <pre>
-.
-└── can_format_26a/
-    ├── pcb_midarubiccube/
-    │   ├── power_board.yaml
-    │   ├── common.yaml
-    │   └── 4omni_bldc_driver.yaml
-    └── README.md
+<!-- TREE_START -->
+<!-- TREE_END -->
 </pre>
+
+- `pcb_midarubiccube/battery_pcb.json` — 安全管理基板のCANフォーマット定義
+- `pcb_midarubiccube/4omni_bldc_driver.yaml` — 4OMNI BLDCドライバ用のCANフォーマット定義
+- `pcb_midarubiccube/common.yaml` — 共通のCANフォーマット定義
+
 
 ## CANフレーム定義
 
@@ -106,10 +106,6 @@ IDは
 
 ## データのサイズなど
 
-データはすべてリトルエディアン。  
+データはすべてリトルエディアン。
 
-- `pcb_midarubiccube/battery_pcb.json` — 安全管理基板のCANフォーマット定義
-- `pcb_midarubiccube/4omni_bldc_driver.yaml` — 4OMNI BLDCドライバ用のCANフォーマット定義
-- `pcb_midarubiccube/common.yaml` — 共通のCANフォーマット定義
-
-[ディレクトリツリー](https://tree.nathanfriend.com/?s=(%27options!(%27fancy-~fullPath!false~trailingSlash-~rootDot-)~5(%275%27can_format_26a*pcb_midarubiccube3power_board03common034omni_bldc_driver07%E3%80%80README.md%27)~version!%271%27)*7%20-!true0.yaml3*%205source!7%5Cn%017530-*)
+作成: 2026-07-19 earth-tk
