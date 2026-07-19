@@ -1,6 +1,9 @@
 name: Update README Tree
 
 on:
+  push:
+    branches:
+      - '**'
   pull_request:
     branches:
       - main
@@ -17,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: リポジトリをチェックアウト (PR ブランチを checkout)
+      - name: リポジトリをチェックアウト
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.head_ref || github.ref_name }}
           fetch-depth: 0
 
       - name: treeコマンドでディレクトリ構造を取得

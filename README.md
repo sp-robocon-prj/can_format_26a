@@ -9,11 +9,6 @@
 <!-- TREE END -->
 </pre>
 
-- `pcb_midarubiccube/battery_pcb.json` — 安全管理基板のCANフォーマット定義
-- `pcb_midarubiccube/4omni_bldc_driver.yaml` — 4OMNI BLDCドライバ用のCANフォーマット定義
-- `pcb_midarubiccube/common.yaml` — 共通のCANフォーマット定義
-
-
 ## CANフレーム定義
 
 - frame_typeはcan_fd
