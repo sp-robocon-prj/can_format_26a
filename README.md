@@ -6,6 +6,23 @@
 ## ディレクトリツリー
 <pre>
 <!-- TREE START -->
+```
+.
+├── .github
+│   └── workflows
+│       └── update-readme-tree.yml
+├── README.md
+├── pcb_midarubiccube
+│   ├── 4250_bldc_driver.yaml
+│   ├── common.yaml
+│   ├── esp32_c5.yaml
+│   ├── lpb.yaml
+│   ├── mainboard_pro_max.yaml
+│   └── power_board.yaml
+└── tree.txt
+
+4 directories, 9 files
+```
 <!-- TREE END -->
 </pre>
 
