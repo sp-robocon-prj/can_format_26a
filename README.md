@@ -5,8 +5,8 @@
 
 ## ディレクトリツリー
 <pre>
-<!-- TREE_START -->
-<!-- TREE_END -->
+<!-- TREE START -->
+<!-- TREE END -->
 </pre>
 
 - `pcb_midarubiccube/battery_pcb.json` — 安全管理基板のCANフォーマット定義
