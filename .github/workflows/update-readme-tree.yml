@@ -28,7 +28,7 @@ jobs:
 
       - name: treeコマンドでディレクトリ構造を取得
         run: |
-          tree -a -I ".git|.github|node_modules" >> tree.txt
+          tree -a -I ".git|.github|tree.txt" >> tree.txt
           cat tree.txt
 
       - name: README.mdを更新
