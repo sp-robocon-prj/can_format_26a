@@ -1,6 +1,9 @@
 name: Update README Tree
 
 on:
+  push:
+    paths-ignore:
+      - README.md
   pull_request:
     branches:
       - main
@@ -8,6 +11,9 @@ on:
     types:
       - opened
       - synchronize
+      - reopened
+      - ready_for_review
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -20,7 +26,7 @@ jobs:
       - name: リポジトリをチェックアウト (PR ブランチを checkout)
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.head_ref || github.ref_name }}
           fetch-depth: 0
 
       - name: treeコマンドでディレクトリ構造を取得
@@ -40,4 +46,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git diff --cached --quiet || (git commit -m "Update README tree" && git push)
+          git diff --cached --quiet || (git commit -m "Update README tree" && git push origin HEAD:${{ github.head_ref || github.ref_name }})
