@@ -6,6 +6,14 @@
 ## ディレクトリツリー
 <pre>
 <!-- TREE START -->
+.
+├── .vscode
+│   └── settings.json
+├── README.md
+├── can_format.md
+└── power_board.md
+
+2 directories, 4 files
 <!-- TREE END -->
 </pre>
 
