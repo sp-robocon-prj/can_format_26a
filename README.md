@@ -23,7 +23,6 @@
 ## CANフレーム定義
 
 - frame_typeはcan_fd
-- id_formatはhexadecimal(16進数)
 - id_typeはEXTENDED(29bit)
 
 IDは
@@ -113,5 +112,13 @@ IDは
 ## データのサイズなど
 
 データはすべてリトルエディアン。
+
+#### サンプル
+
+| Priority Level | Data Type | Board Num | Register ID | 説明 |
+|:--:|:--:|:--:|:--:|:--:|
+| 0x03 | 0x06 | 0x03 | 0x05（回転数rps） | 4250_BLDC_DRIVER 0x03に回転数±を送る |
+| 0x01 | 0x01 | 0x01 | 0x02 |  |
+
 
 作成: earth-tk
