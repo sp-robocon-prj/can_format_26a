@@ -38,12 +38,13 @@ IDは
 |:--:|:--:|:--:|
 | 0x0 | - | - |
 | 0x1 | 共通 | 共通コマンド |
-| 0x2 | [電源管理基板](./pcb_midarubiccube/power_board.yaml) | 電源管理 |
-| 0x3 | [ロジック電源管理基板](./pcb_midarubiccube/lpb.yaml) | ロジック電源管理 |  |
-| 0x6 | [MainBoard PRO Max](./pcb_midarubiccube/mainboard_pro_max.yaml) | メインボード(raspi5) |
-| 0x7 | [Esp32-C5](./pcb_midarubiccube/esp32_c5.yaml) | 代替コントローラー |
-| 0xA | [4250_BLDC_DRIVER](./pcb_midarubiccube/4250_bldc_driver.yaml) | 4250 BLDCドライバ |
-| 0xB | [motor_board](./pcb_midarubiccube/motor_board.yaml) | DCモータードライバ |
+| 0x2 | [電源管理基板](./powerboard.md) | 電源管理 |
+| 0x3 | [ロジック電源管理基板](./logic_power_board.md) | ロジック電源管理 |  |
+| 0x6 | [MainBoard PRO Max](./mainboard_pro_max.md) | メインボード(raspi5) |
+| 0x7 | [Esp32-C5](./esp32_c5.md) | 代替コントローラー |
+| 0xA | [4250_BLDC_DRIVER](./4250_bldc_driver.md) | 4250 BLDCドライバ |
+| 0xB | [motorboard](./motorboard.md) | DCモータードライバ |
+| 0xC | [servoboard](./servoboard.md) | サーボモータードライバ |
 | 0xC~0xF | - | 予約 |
 
 ### Board Num
@@ -89,46 +90,12 @@ IDは
 ロジック電源は非常停止が押されていても落ちない。
 また、駆動電源とは独立しているロジック電源を使用する。
 
-### motorboard（Data type=0x06）  
-
-nはモーターID（0~3）  
-cは全モーターに共通する設定項目（例えば0x105も0x205も結果的に同じものが書き換わるのでどちらでも良い）
-
-|Register ID |name|data type|r/w?|概要|
-|:--:|:--:|:--:|:--:|:--:|
-|0x0n00|NOP||||
-|0x0n01|MOTOR_TYPE|uint8_t|r/w|接続するドライバの種類|
-|0x0n02|GEAR_RATIO|float|r/w|モーターのギア比|
-|0x0n03|MOTOR_STATE|bool|r|ドライバがつながっていたらtrue|
-|0x0n10|PWM|float|r|現在のPWM|
-|0x0n11|PWM_TARGET|float|r/w|PWM指令値|
-|0x0n12|ANGLE_TARGET|float(rad)|w|角度指定|
-|0x0n36|ABS_POS|float(rad)|r|アブソリュートエンコーダによる絶対位置|
-|0x0n37|ABS_SPD|float(rad/s)|r|アブソリュートエンコーダによる絶対速度|
-|0x0n38|ABS_ENC_INV|bool|r/w|アブソエンコーダの回転方向反転|
-|0x0n39|ABS_TURN_CNT|int32_t|r/w|アブソエンコーダの回転回数|
-|0x0n3A|INC_POS|float(rad)|r|インクリメントエンコーダによる相対位置|
-|0x0n3B|INC_SPD|float(rad/s)|r|インクリメントエンコーダによる相対速度|
-|0x0n3C|INC_ENC_INV|bool|r/w|インクリメントエンコーダの回転方向反転|
-|0x0n3D|INC_TURN_CNT|int32_t|r/w|インクリメントエンコーダの回転回数|
-|0x0cF0|MONITOR_PERIOD|uint16_t(ms)|r/w|データをフィードバックする周期(1ms単位) 0で停止|
-|0x0nF1|MONITOR_REG|uint64_t|r/w|モニターするレジスタを設定|
-
-
-MOTOR_TYPE
-|uint8_t|接続するドライバの種類|
-|:--:|:--:|
-|0|NOP|
-|1|マブチDC 385|
-|2|マブチDC 555|
-|3|マブチDC 735|
-
 #### サンプル
 
 | Priority Level | Data Type | Board Num | Register ID | 説明 |
 |:--:|:--:|:--:|:--:|:--:|
-| 0x03 | 0x06 | 0x03 | 0x05（回転数rps） | 4250_BLDC_DRIVER 0x03に回転数±を送る |
-| 0x01 | 0x01 | 0x01 | 0x02 |  |
+| 0x3 | 0xA | 0x3 | 0x0011 | 4250_BLDC_DRIVER(0xA)のmd0(0x0011)に回転数±pwmを送る |
+ID 0x03A30011 DATA -50
 
 ## データのサイズなど
 
