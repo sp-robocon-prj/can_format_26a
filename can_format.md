@@ -3,17 +3,15 @@
 ## CANフレーム定義
 
 - frame_typeはcan_fd
-- id_typeはEXTENDED(29bit)
+- id_typeはBase (11bit)
 
 IDは
 
 | bitレンジ | スコープ | 名称 |
 |:--:|:--:|:--:|
-|1|28|予約 デフォルト0|
-|4|27~24|[Priority Level](#priority-level)|
-|4|23~20|[Data Type](#data-type)|
-|4|19~16|[Board Num](#board-num)|
-|16|15~0|[Register ID](#register-id)|
+|3|11~9|[Priority Level](#priority-level)|
+|4|8~5|[Data Type](#data-type)|
+|4|4~0|[Board Num](#board-num)|
 
 の組み合わせで表現される。
 
