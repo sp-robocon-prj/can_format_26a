@@ -1,6 +1,0 @@
-
-4250_bldc_driver, motorboardに電源が入ったら、これを投げるようにする
-|0x0001|MOTOR_TYPE|uint8_t|r/w|接続するドライバの種類|
-
-data_type 0x6,7で受け取る。
-また、data_type6,7からも投げる。
