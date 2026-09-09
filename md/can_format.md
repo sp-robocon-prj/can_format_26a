@@ -36,13 +36,13 @@ IDは
 |:--:|:--:|:--:|
 | 0x0 | - | - |
 | 0x1 | 共通 | 共通コマンド |
-| 0x2 | [電源管理基板](./powerboard.md) | 電源管理 |
-| 0x3 | [ロジック電源管理基板](./logic_power_board.md) | ロジック電源管理 |  |
-| 0x6 | [MainBoard PRO Max](./mainboard_pro_max.md) | メインボード(raspi5) |
-| 0x7 | [Esp32-C5](./esp32_c5.md) | 代替コントローラー |
-| 0xA | [4250_BLDC_DRIVER](./4250_bldc_driver.md) | 4250 BLDCドライバ |
-| 0xB | [motorboard](./motorboard.md) | DCモータードライバ |
-| 0xC | [servoboard](./servoboard.md) | サーボモータードライバ |
+| 0x2 | [電源管理基板](./md/powerboard.md) | 電源管理 |
+| 0x3 | [ロジック電源管理基板](./md/logic_power_board.md) | ロジック電源管理 |  |
+| 0x6 | [MainBoard PRO Max](./md/mainboard_pro_max.md) | メインボード(raspi5) |
+| 0x7 | [Esp32-C5](./md/esp32_c5.md) | 代替コントローラー |
+| 0xA | [4250_BLDC_DRIVER](./md/4250_bldc_driver.md) | 4250 BLDCドライバ |
+| 0xB | [motorboard](./md/motorboard.md) | DCモータードライバ |
+| 0xC | [servoboard](./md/servoboard.md) | サーボモータードライバ |
 | 0xC~0xF | - | 予約 |
 
 ### Board Num

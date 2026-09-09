@@ -21,6 +21,6 @@
 <!-- TREE END -->
 </pre>
 
-[can_format](./can_format.md) 全体のフォーマットの説明。  
-[power_board](./power_board.md) 電源管理基板のフォーマット。
+[can_format](./md/can_format.md) 全体のフォーマットの説明。  
+[power_board](./md/power_board.md) 電源管理基板のフォーマット。
 
