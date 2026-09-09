@@ -5,6 +5,7 @@ uint8 board_num     # 0x0~0xF (4bit)
 
 bool powerstatus
 uint8 ledstatus
-float current_limit
+float32 current_limit
+
 bool monitor_peirod
 uint16 monitor_freq
