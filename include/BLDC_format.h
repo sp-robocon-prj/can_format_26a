@@ -3,7 +3,7 @@
 #pragma pack(push, 1)
 struct BLDC_CANPacket {
     uint8_t mode;
-    int16_t rps_target;          
+    float rps_target;          
     float  angle_target;
     bool monitor_peirod;
     uint16_t monitor_freq;
