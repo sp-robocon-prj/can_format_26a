@@ -4,6 +4,11 @@
 struct PWRTX_CANPacket {
     bool pwrstatus;
     uint8_t ledstatus;
+    float current_limit;
+    float battery_limit;
+    
+    bool monitor_flag;
+    uint16_t monitor_freq;
 };
 #pragma pack(pop)
 
