@@ -10,6 +10,7 @@
 ├── .gitignore
 ├── BLDCRX.msg
 ├── BLDCTX.msg
+├── MotorBoardTX.msg
 ├── PWRManagerRX.msg
 ├── PWRManagerTX.msg
 ├── README.md
@@ -26,7 +27,7 @@
     ├── motorboard.md
     └── powerboard.md
 
-3 directories, 16 files
+3 directories, 17 files
 <!-- TREE END -->
 </pre>
 
