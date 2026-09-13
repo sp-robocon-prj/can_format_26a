@@ -4,8 +4,9 @@ enum class DataType : uint8_t {
     COMMON_COMMAND = 0x01,
     POWERBOARD_COMMAND = 0x02,
     BLDC_COMMAND = 0x03,
-    MOTORBOARDC_COMMAND = 0x04,
-    MAINBOARD_COMMAND = 0x05,
+    MOTORBOARD_COMMAND = 0x04,
+    SERVO_COMMAND = 0x05,
+    MAINBOARD_COMMAND = 0x06,
 };
 
 union ID {
