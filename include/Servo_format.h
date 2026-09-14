@@ -1,10 +1,12 @@
 #pragma once
 
 #pragma pack(push, 1)
-struct BLDCTX_CANPacket {
-    uint8_t id;
-    uint16_t position;
-    uint
+struct ServoTX_CANPacket {   
+    uint8_t channel;
+    int16_t position[3];
+    int16_t time[3];
+    int16_t speed[3];
+
     bool monitor_flag;
     uint16_t monitor_freq;
 };
