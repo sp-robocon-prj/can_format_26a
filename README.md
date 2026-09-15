@@ -15,7 +15,6 @@
 ├── PWRManagerTX.msg
 ├── README.md
 ├── ServoTX.msg
-├── ServomotorTX.msg
 ├── UdpCanFrame.msg
 ├── include
 │   ├── BLDC_format.h
@@ -31,7 +30,7 @@
     ├── motorboard.md
     └── powerboard.md
 
-3 directories, 21 files
+3 directories, 20 files
 <!-- TREE END -->
 </pre>
 
