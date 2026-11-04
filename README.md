@@ -1,8 +1,6 @@
 # 2026のA機体のCANフォーマット。
 [参考:Gakurobo2024_protocol](https://github.com/NITTC-GakuRobo/Gakurobo2024_protocol)
 
-パースしやすいようにyamlで書いてる。   
-
 ## ディレクトリツリー
 <pre>
 <!-- TREE START -->
